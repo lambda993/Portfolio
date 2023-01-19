@@ -1,0 +1,94 @@
+$txt-default-font: Tahoma, Arial, Helvetica, sans-serif;
+$bg-default-color: black;
+$txt-default-color: white;
+$nav-bg-default-color: #4c3d4b;
+$nav-border-default-color: #9da2ab;
+$li-default-padding: 5px 0.3em;
+
+html {
+    font-family: $txt-default-font;
+    background-color: $bg-default-color;
+    color: $txt-default-color;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: $nav-bg-default-color;
+    position: sticky;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+
+        :first-child {
+            display: block;
+        }
+    }
+
+    li {
+        display: none;
+        text-align: center;
+        margin: 0;
+        padding: $li-default-padding;
+        border: 1px solid $nav-border-default-color;
+    }
+}
+
+.extend-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ul {
+        flex-direction: column;
+    }
+
+    li {
+        display: block;
+    }
+}
+
+//Mobile
+@media screen and (min-width: 576px) {}
+
+//Mobile big
+@media screen and (min-width: 768px) {}
+
+//Tablet
+@media screen and (min-width: 992px) {
+    nav {
+
+        div {
+            display: block;
+
+            button {
+                display: none;
+            }
+        }
+
+        ul {
+            justify-content: space-between;
+        }
+
+        li {
+            display: block;
+        }
+    }
+}
+
+//Desktop
+@media screen and (min-width: 1200px) {}
+
+//Widescreen
+@media screen and (min-width: 1400px) {}
