@@ -1,85 +1,17 @@
 //colors
-$purple-violet: #4c3d4b;
+$dark-blue: #092064;
 $light-grey: #9da2ab;
+$dark-grey: #1b1c1e;
 //screen sizes
-$mobile: 576px;
-$mobile-big: 768px;
-$tablet: 992px;
-$desktop: 1200px;
-$desktop-widescreen: 1400px;
+$mobile-s: 320px;
+$mobile-m: 375px;
+$mobile-l: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+$laptop-l: 1440px;
+$ultra-wide-screen: 2560px;
 
-html {
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
-    background-color: black;
-    color: white;
-}
-
-body {
-    margin: 0;
-}
-
-nav {
-    background-color: $purple-violet;
-    position: sticky;
-
-    div {
-        position: relative;
-
-        button {
-            position: absolute;
-            top: 12.5%;
-            right: 0;
-        }
-    }
-
-    ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-
-        :first-child {
-            display: block;
-            border: none;
-        }
-    }
-
-    li {
-        display: none;
-        text-align: center;
-        margin: 0;
-        padding: 5px 0.3em;
-        border: 1px solid $light-grey;
-    }
-}
-
-.extend-navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    ul {
-        margin: 1em auto;
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    li {
-        display: block;
-    }
-
-    button {
-        position: static;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (min-width: $mobile) {}
-
-@media screen and (min-width: $mobile-big) {}
-
-@media screen and (min-width: $tablet) {
+@mixin navbar-tablet-screen-and-above() {
     nav {
 
         div {
@@ -103,7 +35,7 @@ nav {
         }
     }
 
-    //needed to fix a bug when resizing screen from mobile to tablet
+    //needed to fix a bug when resizing screen from mobile to tablet and this class is active
     .extend-navbar {
         display: block;
 
@@ -115,6 +47,209 @@ nav {
     }
 }
 
-@media screen and (min-width: $desktop) {}
+@mixin text-tablet-screen-and-above() {
+    #personal-data {
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
 
-@media screen and (min-width: $desktop-widescreen) {}
+        h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+    }
+
+    #bio {
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
+
+html {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: $dark-blue;
+    position: sticky;
+    top: 0;
+    padding: 0.3em 0;
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: none;
+        text-align: center;
+        margin: 0;
+        padding: 5px 0.3em;
+        border: 1px solid $light-grey;
+    }
+}
+
+.extend-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ul {
+        margin: 1em auto;
+        flex-direction: column;
+        gap: 1em;
+
+        :first-child {
+            border: none;
+        }
+    }
+
+    li {
+        display: block;
+    }
+
+    button {
+        position: static;
+        margin: 0 auto;
+    }
+}
+
+#personal-data {
+    background-color: $dark-grey;
+    padding: 1em 5%;
+
+    h1 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h3 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+}
+
+#my-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: $dark-blue;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+    }
+}
+
+#bio {
+    margin: 0 5%;
+
+    h1 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: $mobile-s) and (max-width: calc($mobile-m - 1px)) {}
+
+@media screen and (min-width: $mobile-m) and (max-width: calc($mobile-l - 1px)) {}
+
+@media screen and (min-width: $mobile-l) and (max-width: calc($tablet - 1px)) {}
+
+@media screen and (min-width: $tablet) and (max-width: calc($laptop - 1px)) {
+    nav {
+        div {
+            display: block;
+            position: relative;
+
+            button {
+                position: absolute;
+                top: 12.5%;
+                right: 0;
+            }
+
+            ul {
+                :first-child {
+                    display: block;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    @include text-tablet-screen-and-above();
+}
+
+@media screen and (min-width: $laptop) and (max-width: calc($laptop-l - 1px)) {
+    @include navbar-tablet-screen-and-above();
+    @include text-tablet-screen-and-above();
+}
+
+@media screen and (min-width: $laptop-l) and (max-width: calc($ultra-wide-screen - 1px)) {
+    @include navbar-tablet-screen-and-above();
+    @include text-tablet-screen-and-above();
+}
+
+@media screen and (min-width: $ultra-wide-screen) {
+    @include navbar-tablet-screen-and-above();
+    @include text-tablet-screen-and-above();
+}
