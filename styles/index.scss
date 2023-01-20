@@ -1,14 +1,17 @@
-$txt-default-font: Tahoma, Arial, Helvetica, sans-serif;
-$bg-default-color: black;
-$txt-default-color: white;
-$nav-bg-default-color: #4c3d4b;
-$nav-border-default-color: #9da2ab;
-$li-default-padding: 5px 0.3em;
+//colors
+$purple-violet: #4c3d4b;
+$light-grey: #9da2ab;
+//screen sizes
+$mobile: 576px;
+$mobile-big: 768px;
+$tablet: 992px;
+$desktop: 1200px;
+$desktop-widescreen: 1400px;
 
 html {
-    font-family: $txt-default-font;
-    background-color: $bg-default-color;
-    color: $txt-default-color;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
 }
 
 body {
@@ -16,7 +19,7 @@ body {
 }
 
 nav {
-    background-color: $nav-bg-default-color;
+    background-color: $purple-violet;
     position: sticky;
 
     div {
@@ -40,8 +43,8 @@ nav {
         display: none;
         text-align: center;
         margin: 0;
-        padding: $li-default-padding;
-        border: 1px solid $nav-border-default-color;
+        padding: 5px 0.3em;
+        border: 1px solid $light-grey;
     }
 }
 
@@ -59,14 +62,11 @@ nav {
     }
 }
 
-//Mobile
-@media screen and (min-width: 576px) {}
+@media screen and (min-width: $mobile) {}
 
-//Mobile big
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: $mobile-big) {}
 
-//Tablet
-@media screen and (min-width: 992px) {
+@media screen and (min-width: $tablet) {
     nav {
 
         div {
@@ -87,8 +87,6 @@ nav {
     }
 }
 
-//Desktop
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: $desktop) {}
 
-//Widescreen
-@media screen and (min-width: 1400px) {}
+@media screen and (min-width: $desktop-widescreen) {}
