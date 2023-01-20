@@ -23,8 +23,13 @@ nav {
     position: sticky;
 
     div {
-        display: flex;
-        justify-content: space-between;
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 12.5%;
+            right: 0;
+        }
     }
 
     ul {
@@ -36,6 +41,7 @@ nav {
 
         :first-child {
             display: block;
+            border: none;
         }
     }
 
@@ -54,11 +60,18 @@ nav {
     justify-content: center;
 
     ul {
+        margin: 1em auto;
         flex-direction: column;
+        gap: 1em;
     }
 
     li {
         display: block;
+    }
+
+    button {
+        position: static;
+        margin: 0 auto;
     }
 }
 
@@ -79,10 +92,25 @@ nav {
 
         ul {
             justify-content: space-between;
+
+            :first-child {
+                border: 1px solid $light-grey;
+            }
         }
 
         li {
             display: block;
+        }
+    }
+
+    //needed to fix a bug when resizing screen from mobile to tablet
+    .extend-navbar {
+        display: block;
+
+        ul {
+            flex-direction: row;
+            margin: 0;
+            gap: 0;
         }
     }
 }
