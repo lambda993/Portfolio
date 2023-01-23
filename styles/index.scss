@@ -11,84 +11,6 @@ $laptop: 1024px;
 $laptop-l: 1440px;
 $ultra-wide-screen: 2560px;
 
-@mixin navbar-tablet-screen-and-above() {
-    nav {
-
-        div {
-            display: block;
-
-            button {
-                display: none;
-            }
-        }
-
-        ul {
-            justify-content: space-between;
-
-            :first-child {
-                border: 1px solid $light-grey;
-            }
-        }
-
-        li {
-            display: block;
-        }
-    }
-
-    //needed to fix a bug when resizing screen from mobile to tablet and this class is active
-    .extend-navbar {
-        display: block;
-
-        ul {
-            flex-direction: row;
-            margin: 0;
-            gap: 0;
-        }
-    }
-}
-
-@mixin text-tablet-screen-and-above() {
-    #personal-data {
-        h1 {
-            display: block;
-            font-size: 2em;
-            margin-top: 0.67em;
-            margin-bottom: 0.67em;
-            margin-left: 0;
-            margin-right: 0;
-            font-weight: bold;
-        }
-
-        h3 {
-            display: block;
-            font-size: 1.17em;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            margin-left: 0;
-            margin-right: 0;
-            font-weight: bold;
-        }
-
-        h1,
-        h3 {
-            text-align: center;
-        }
-    }
-
-    #bio {
-        h1 {
-            display: block;
-            font-size: 2em;
-            margin-top: 0.67em;
-            margin-bottom: 0.67em;
-            margin-left: 0;
-            margin-right: 0;
-            font-weight: bold;
-            text-align: center;
-        }
-    }
-}
-
 html {
     font-family: Tahoma, Arial, Helvetica, sans-serif;
     background-color: black;
@@ -97,6 +19,26 @@ html {
 
 body {
     margin: 0;
+}
+
+h1 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 nav {
@@ -155,26 +97,6 @@ nav {
 #personal-data {
     background-color: $dark-grey;
     padding: 1em 5%;
-
-    h1 {
-        display: block;
-        font-size: 1.5em;
-        margin-top: 0.83em;
-        margin-bottom: 0.83em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
-
-    h3 {
-        display: block;
-        font-size: 1em;
-        margin-top: 1.33em;
-        margin-bottom: 1.33em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
 }
 
 #my-picture {
@@ -197,25 +119,34 @@ nav {
 
 #bio {
     margin: 0 5%;
+}
 
+@media screen and (min-width: $tablet) {
     h1 {
         display: block;
-        font-size: 1.5em;
-        margin-top: 0.83em;
-        margin-bottom: 0.83em;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
         margin-left: 0;
         margin-right: 0;
         font-weight: bold;
     }
-}
 
-@media screen and (min-width: $mobile-s) and (max-width: calc($mobile-m - 1px)) {}
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
 
-@media screen and (min-width: $mobile-m) and (max-width: calc($mobile-l - 1px)) {}
+    h1,
+    h3 {
+        text-align: center;
+    }
 
-@media screen and (min-width: $mobile-l) and (max-width: calc($tablet - 1px)) {}
-
-@media screen and (min-width: $tablet) and (max-width: calc($laptop - 1px)) {
     nav {
         div {
             display: block;
@@ -235,21 +166,40 @@ nav {
             }
         }
     }
-
-    @include text-tablet-screen-and-above();
 }
 
-@media screen and (min-width: $laptop) and (max-width: calc($laptop-l - 1px)) {
-    @include navbar-tablet-screen-and-above();
-    @include text-tablet-screen-and-above();
-}
+@media screen and (min-width: $laptop) {
+    nav {
 
-@media screen and (min-width: $laptop-l) and (max-width: calc($ultra-wide-screen - 1px)) {
-    @include navbar-tablet-screen-and-above();
-    @include text-tablet-screen-and-above();
-}
+        div {
+            display: block;
 
-@media screen and (min-width: $ultra-wide-screen) {
-    @include navbar-tablet-screen-and-above();
-    @include text-tablet-screen-and-above();
+            button {
+                display: none;
+            }
+        }
+
+        ul {
+            justify-content: space-between;
+
+            :first-child {
+                border: 1px solid $light-grey;
+            }
+        }
+
+        li {
+            display: block;
+        }
+    }
+
+    //needed to fix a bug when resizing screen from mobile to tablet and this class is active
+    .extend-navbar {
+        display: block;
+
+        ul {
+            flex-direction: row;
+            margin: 0;
+            gap: 0;
+        }
+    }
 }
