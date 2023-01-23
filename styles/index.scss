@@ -47,7 +47,7 @@ nav {
     top: 0;
     padding: 0.3em 0;
 
-    div {
+    #nav-items {
         display: flex;
         justify-content: center;
     }
@@ -88,9 +88,11 @@ nav {
         display: block;
     }
 
-    button {
-        position: static;
-        margin: 0 auto;
+    #nav-items {
+        div {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 
@@ -103,7 +105,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1em auto;
 
     div {
         display: flex;
@@ -142,28 +143,49 @@ nav {
         font-weight: bold;
     }
 
-    h1,
-    h3 {
-        text-align: center;
-    }
-
     nav {
-        div {
-            display: block;
-            position: relative;
-
-            button {
-                position: absolute;
-                top: 12.5%;
-                right: 0;
-            }
+        #nav-items {
+            display: flex;
 
             ul {
+                flex: 11;
+
                 :first-child {
                     display: block;
                     border: none;
                 }
             }
+
+            div {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 1em;
+            }
+        }
+    }
+
+    #personal-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        #my-data {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1,
+            h3 {
+                margin-left: 31%;
+            }
+        }
+    }
+
+    #bio {
+        h1 {
+            text-align: center;
         }
     }
 }
@@ -171,7 +193,7 @@ nav {
 @media screen and (min-width: $laptop) {
     nav {
 
-        div {
+        #nav-items {
             display: block;
 
             button {
@@ -200,6 +222,20 @@ nav {
             flex-direction: row;
             margin: 0;
             gap: 0;
+        }
+    }
+
+    #personal-data {
+        flex-direction: row;
+        gap: 5em;
+
+        h1,
+        h3 {
+            margin-left: auto;
+        }
+
+        #my-data {
+            display: block;
         }
     }
 }
