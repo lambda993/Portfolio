@@ -99,6 +99,8 @@ nav {
 }
 
 #personal-data {
+    display: flex;
+    flex-direction: column;
     background-color: $dark-grey;
     padding: 1em 0;
 
@@ -180,13 +182,6 @@ nav {
         }
     }
 
-    #personal-data {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1em;
-    }
-
     #bio {
         h1 {
             text-align: center;
@@ -231,11 +226,13 @@ nav {
 
     #personal-data {
         flex-direction: row;
-        gap: 5em;
+
+        #my-picture {
+            flex: 1;
+        }
 
         ul {
-            display: block;
-            margin: 0;
+            flex: 1;
         }
     }
 }
@@ -251,16 +248,10 @@ nav {
     #first-page {
         display: flex;
         justify-content: center;
-        gap: 1em;
+        gap: 1%;
 
         #personal-data {
             flex: 1;
-
-            ul {
-                display: flex;
-                justify-content: center;
-                margin: auto;
-            }
         }
 
         #bio {
