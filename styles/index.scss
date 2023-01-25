@@ -9,7 +9,7 @@ $mobile-l: 425px;
 $tablet: 768px;
 $laptop: 1024px;
 $laptop-l: 1440px;
-$ultra-wide-screen: 2560px;
+$wide-screen: 2560px;
 
 html {
     font-family: Tahoma, Arial, Helvetica, sans-serif;
@@ -21,7 +21,8 @@ body {
     margin: 0;
 }
 
-h1 {
+h1,
+.h1 {
     display: block;
     font-size: 1.5em;
     margin-top: 0.83em;
@@ -31,7 +32,8 @@ h1 {
     font-weight: bold;
 }
 
-h3 {
+h3,
+.h3 {
     display: block;
     font-size: 1em;
     margin-top: 1.33em;
@@ -98,23 +100,32 @@ nav {
 
 #personal-data {
     background-color: $dark-grey;
-    padding: 1em 5%;
-}
+    padding: 1em 0;
 
-#my-picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    div {
+    #my-picture {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        background-color: $dark-blue;
-        height: 300px;
-        width: 300px;
-        border-radius: 50%;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: $dark-blue;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        padding: 0;
     }
 }
 
@@ -123,7 +134,9 @@ nav {
 }
 
 @media screen and (min-width: $tablet) {
-    h1 {
+
+    h1,
+    .h1 {
         display: block;
         font-size: 2em;
         margin-top: 0.67em;
@@ -133,7 +146,8 @@ nav {
         font-weight: bold;
     }
 
-    h3 {
+    h3,
+    .h3 {
         display: block;
         font-size: 1.17em;
         margin-top: 1em;
@@ -170,17 +184,7 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-        #my-data {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            h1,
-            h3 {
-                margin-left: 31%;
-            }
-        }
+        gap: 1em;
     }
 
     #bio {
@@ -229,13 +233,41 @@ nav {
         flex-direction: row;
         gap: 5em;
 
-        h1,
-        h3 {
-            margin-left: auto;
+        ul {
+            display: block;
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (min-width: $wide-screen) {
+    nav {
+        #nav-items {
+            max-width: $laptop-l;
+            margin: 0 auto;
+        }
+    }
+
+    #first-page {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+
+        #personal-data {
+            flex: 1;
+
+            ul {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+            }
         }
 
-        #my-data {
-            display: block;
+        #bio {
+            flex: 1;
+            background-color: $dark-grey;
+            margin: 0;
+            padding: 0 5%;
         }
     }
 }
