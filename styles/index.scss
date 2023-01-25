@@ -49,32 +49,53 @@ nav {
     top: 0;
     padding: 0.3em 0;
 
-    #nav-items {
+    div {
         display: flex;
         justify-content: center;
-    }
 
-    ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-    }
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
 
-    li {
-        display: none;
-        text-align: center;
-        margin: 0;
-        padding: 5px 0.3em;
-        border: 1px solid $light-grey;
+            li {
+                display: none;
+                text-align: center;
+                margin: 0;
+                padding: 5px 0.3em;
+                border: 1px solid $light-grey;
+            }
+        }
+
+        div {
+            #dropdown-button {
+                width: 25px;
+                height: 25px;
+                border: 2px solid $light-grey;
+                border-radius: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    border-bottom: 2px solid $light-grey;
+                    border-right: 2px solid $light-grey;
+                    transform: rotate(45deg);
+                }
+            }
+        }
     }
 }
 
 .extend-navbar {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 
     ul {
         margin: 1em auto;
@@ -84,16 +105,15 @@ nav {
         :first-child {
             border: none;
         }
+
+        li {
+            display: block;
+        }
     }
 
-    li {
-        display: block;
-    }
-
-    #nav-items {
-        div {
-            display: flex;
-            justify-content: center;
+    #dropdown-button {
+        &::before {
+            transform: rotate(-135deg);
         }
     }
 }
@@ -195,21 +215,21 @@ nav {
         #nav-items {
             display: block;
 
-            button {
+            #dropdown-button {
                 display: none;
             }
-        }
 
-        ul {
-            justify-content: space-between;
+            ul {
+                justify-content: space-between;
 
-            :first-child {
-                border: 1px solid $light-grey;
+                :first-child {
+                    border: 1px solid $light-grey;
+                }
+
+                li {
+                    display: block;
+                }
             }
-        }
-
-        li {
-            display: block;
         }
     }
 
