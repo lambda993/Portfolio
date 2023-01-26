@@ -151,7 +151,7 @@ nav {
     }
 }
 
-#bio {
+.text-container {
     margin: 0 5%;
 }
 
@@ -202,7 +202,7 @@ nav {
         }
     }
 
-    #bio {
+    .text-container {
         h1 {
             text-align: center;
         }
@@ -279,6 +279,20 @@ nav {
             background-color: $dark-grey;
             margin: 0;
             padding: 0 5%;
+        }
+    }
+
+    #second-page {
+        display: flex;
+        justify-content: center;
+        gap: 1%;
+
+        #my-skills {
+            flex: 1;
+        }
+
+        #my-passions {
+            flex: 1;
         }
     }
 }
