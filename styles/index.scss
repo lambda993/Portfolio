@@ -119,11 +119,15 @@ nav {
     }
 }
 
+.section-padding {
+    padding: 1em 0;
+}
+
 #personal-data {
     display: flex;
     flex-direction: column;
     background-color: $dark-grey;
-    padding: 1em 0;
+    margin: 0;
 
     #my-picture {
         display: flex;
@@ -156,61 +160,11 @@ nav {
     margin: 0 5%;
 }
 
-@media screen and (min-width: $tablet) {
-
-    h1,
-    .h1 {
-        display: block;
-        font-size: 2em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
-
-    h3,
-    .h3 {
-        display: block;
-        font-size: 1.17em;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: bold;
-    }
-
-    nav {
-        #nav-items {
-            display: flex;
-
-            ul {
-                flex: 11;
-
-                :first-child {
-                    display: block;
-                    border: none;
-                }
-            }
-
-            div {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 1em;
-            }
-        }
-    }
-
-    .text-container {
-        h1 {
-            text-align: center;
-        }
-    }
-}
 
 #my-skills {
+    background-color: $dark-grey;
+    margin: 0;
+
     ul {
         list-style: none;
         margin: 0;
@@ -396,6 +350,66 @@ nav {
     }
 }
 
+@media screen and (min-width: $tablet) {
+
+    h1,
+    .h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h3,
+    .h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    nav {
+        #nav-items {
+            display: flex;
+
+            ul {
+                flex: 11;
+
+                :first-child {
+                    display: block;
+                    border: none;
+                }
+            }
+
+            div {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 1em;
+            }
+        }
+    }
+
+    .text-container {
+        h1 {
+            text-align: center;
+        }
+    }
+
+    #my-passions {
+        h3 {
+            text-align: center;
+        }
+    }
+}
+
 @media screen and (min-width: $laptop) {
     nav {
 
@@ -442,6 +456,21 @@ nav {
             flex: 1;
         }
     }
+
+    #my-skills {
+        :first-child {
+            >div {
+                display: flex;
+                justify-content: space-between;
+                gap: 2em;
+
+                >div {
+                    flex: 1;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: $wide-screen) {
@@ -459,13 +488,11 @@ nav {
 
         #personal-data {
             flex: 1;
+            background-color: black;
         }
 
         #bio {
             flex: 1;
-            background-color: $dark-grey;
-            margin: 0;
-            padding: 0 5%;
         }
     }
 
@@ -476,6 +503,7 @@ nav {
 
         #my-skills {
             flex: 1;
+            background-color: black;
         }
 
         #my-passions {
