@@ -1,5 +1,5 @@
 function extendNavbar() {
-    items = document.getElementById('nav-items')
+    let items = document.getElementById('nav-items')
     items.classList.toggle('extend-navbar')
 }
 
