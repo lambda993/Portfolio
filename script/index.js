@@ -3,4 +3,6 @@ function extendNavbar() {
     items.classList.toggle('extend-navbar')
 }
 
-document.getElementById('dropdown-button').addEventListener('click', extendNavbar)
+document
+    .querySelector('.dropdown-button')
+    .addEventListener('click', extendNavbar)

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "sass-build": "sass scss/main.scss:dist/css/main.min.css --style compressed --load-path scss/",
+    "sass-dev": "npm run sass-build -- --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}

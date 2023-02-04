@@ -1,0 +1,92 @@
+.navbar {
+    background-color: $dark-blue;
+    position: sticky;
+    top: 0;
+    padding: 0.3em 0;
+    z-index: 100;
+}
+
+#nav-items {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.nav-brand {
+    font-size: 2rem;
+}
+
+.extend-navbar {
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+        margin: 1em auto;
+        flex-direction: column;
+        gap: 1em;
+
+        li {
+            display: block;
+        }
+    }
+
+    .dropdown-button::before {
+        transform: rotate(-135deg);
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    #nav-items {
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1em;
+        }
+    }
+}
+
+@media screen and (min-width: $laptop) {
+    #nav-items {
+        display: flex;
+
+        ul {
+            justify-content: space-between;
+
+            li {
+                display: block;
+            }
+        }
+    }
+
+    //needed to fix a bug when resizing screen from mobile to tablet and this class is active
+    .extend-navbar {
+        display: block;
+
+        ul {
+            flex-direction: row;
+            margin: 0;
+            gap: 0;
+        }
+    }
+}
+
+@media screen and (min-width: $wide-screen) {
+    #nav-items {
+        max-width: $laptop-l;
+        margin: 0 auto;
+    }
+}

@@ -1,122 +1,24 @@
-//colors
-$dark-blue: #092064;
-$light-grey: #9da2ab;
-$dark-grey: #1b1c1e;
-//screen sizes
-$mobile-s: 320px;
-$mobile-m: 375px;
-$mobile-l: 425px;
-$tablet: 768px;
-$laptop: 1024px;
-$laptop-l: 1440px;
-$wide-screen: 2560px;
-
 html {
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
     background-color: black;
     color: white;
-}
-
-body {
-    margin: 0;
 }
 
 h1,
 .h1 {
     display: block;
-    font-size: 1.5em;
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     margin-left: 0;
     margin-right: 0;
-    font-weight: bold;
 }
 
 h3,
 .h3 {
     display: block;
-    font-size: 1em;
     margin-top: 1.33em;
     margin-bottom: 1.33em;
     margin-left: 0;
     margin-right: 0;
-    font-weight: bold;
-}
-
-nav {
-    background-color: $dark-blue;
-    position: sticky;
-    top: 0;
-    padding: 0.3em 0;
-    z-index: 100;
-
-    div {
-        display: flex;
-        justify-content: center;
-
-        ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-
-            li {
-                display: none;
-                text-align: center;
-                margin: 0;
-                padding: 5px 0.3em;
-                border: 1px solid $light-grey;
-            }
-        }
-
-        div {
-            #dropdown-button {
-                width: 25px;
-                height: 25px;
-                border: 2px solid $light-grey;
-                border-radius: 20%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-
-                &::before {
-                    content: "";
-                    width: 6px;
-                    height: 6px;
-                    border-bottom: 2px solid $light-grey;
-                    border-right: 2px solid $light-grey;
-                    transform: rotate(45deg);
-                }
-            }
-        }
-    }
-}
-
-.extend-navbar {
-    flex-direction: column;
-    align-items: center;
-
-    ul {
-        margin: 1em auto;
-        flex-direction: column;
-        gap: 1em;
-
-        :first-child {
-            border: none;
-        }
-
-        li {
-            display: block;
-        }
-    }
-
-    #dropdown-button {
-        &::before {
-            transform: rotate(-135deg);
-        }
-    }
 }
 
 .section-padding {
@@ -156,11 +58,6 @@ nav {
     }
 }
 
-.text-container {
-    margin: 0 5%;
-}
-
-
 #my-skills {
     background-color: $dark-grey;
     margin: 0;
@@ -177,10 +74,15 @@ nav {
     width: 100%;
     margin: 0.3em 0;
     position: relative;
-    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 50%, rgba(0, 255, 0, 1) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 255, 0, 1) 50%,
+        rgba(0, 255, 0, 1) 100%
+    );
 
     &::before {
-        content: "";
+        content: '';
         display: block;
         height: 100%;
         width: 0;
@@ -351,56 +253,22 @@ nav {
 }
 
 @media screen and (min-width: $tablet) {
-
     h1,
     .h1 {
         display: block;
-        font-size: 2em;
         margin-top: 0.67em;
         margin-bottom: 0.67em;
         margin-left: 0;
         margin-right: 0;
-        font-weight: bold;
     }
 
     h3,
     .h3 {
         display: block;
-        font-size: 1.17em;
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: 0;
         margin-right: 0;
-        font-weight: bold;
-    }
-
-    nav {
-        #nav-items {
-            display: flex;
-
-            ul {
-                flex: 11;
-
-                :first-child {
-                    display: block;
-                    border: none;
-                }
-            }
-
-            div {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 1em;
-            }
-        }
-    }
-
-    .text-container {
-        h1 {
-            text-align: center;
-        }
     }
 
     #my-passions {
@@ -411,40 +279,6 @@ nav {
 }
 
 @media screen and (min-width: $laptop) {
-    nav {
-
-        #nav-items {
-            display: block;
-
-            #dropdown-button {
-                display: none;
-            }
-
-            ul {
-                justify-content: space-between;
-
-                :first-child {
-                    border: 1px solid $light-grey;
-                }
-
-                li {
-                    display: block;
-                }
-            }
-        }
-    }
-
-    //needed to fix a bug when resizing screen from mobile to tablet and this class is active
-    .extend-navbar {
-        display: block;
-
-        ul {
-            flex-direction: row;
-            margin: 0;
-            gap: 0;
-        }
-    }
-
     #personal-data {
         flex-direction: row;
 
@@ -459,12 +293,12 @@ nav {
 
     #my-skills {
         :first-child {
-            >div {
+            > div {
                 display: flex;
                 justify-content: space-between;
                 gap: 2em;
 
-                >div {
+                > div {
                     flex: 1;
                     margin: 0 auto;
                 }
@@ -474,13 +308,6 @@ nav {
 }
 
 @media screen and (min-width: $wide-screen) {
-    nav {
-        #nav-items {
-            max-width: $laptop-l;
-            margin: 0 auto;
-        }
-    }
-
     #first-page {
         display: flex;
         justify-content: center;
