@@ -1,13 +1,6 @@
 .text-container {
     margin-right: 2rem;
     margin-left: 2rem;
-
-    @media screen and (min-width: $tablet) {
-        $margin-width: 14vw;
-
-        margin-right: $margin-width;
-        margin-left: $margin-width;
-    }
 }
 
 .text-container h1 {
