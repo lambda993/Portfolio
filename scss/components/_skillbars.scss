@@ -1,0 +1,180 @@
+.skillbar {
+    height: 6px;
+    width: 100%;
+    margin: 0.3em 0;
+    position: relative;
+    background: linear-gradient(90deg,
+            rgba(255, 0, 0, 1) 0%,
+            rgba(255, 255, 0, 1) 50%,
+            rgba(0, 255, 0, 1) 100%);
+
+    &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 0;
+        position: absolute;
+        right: 0;
+        background-color: $dark-grey;
+    }
+}
+
+//Tecnichal knowledge (languages)
+#st1 {
+    &::before {
+        width: 5%;
+    }
+}
+
+#st2 {
+    &::before {
+        width: 15%;
+    }
+}
+
+#st3 {
+    &::before {
+        width: 8%;
+    }
+}
+
+#st4 {
+    &::before {
+        width: 12%;
+    }
+}
+
+#st5 {
+    &::before {
+        width: 25%;
+    }
+}
+
+#st6 {
+    &::before {
+        width: 25%;
+    }
+}
+
+#st7 {
+    &::before {
+        width: 75%;
+    }
+}
+
+#st8 {
+    &::before {
+        width: 20%;
+    }
+}
+
+#st9 {
+    &::before {
+        width: 5%;
+    }
+}
+
+#st10 {
+    &::before {
+        width: 50%;
+    }
+}
+
+#st11 {
+    &::before {
+        width: 30%;
+    }
+}
+
+//Tecnichal knowledge (utilities)
+#stu1 {
+    &::before {
+        width: 5%;
+    }
+}
+
+#stu2 {
+    &::before {
+        width: 35%;
+    }
+}
+
+#stu3 {
+    &::before {
+        width: 50%;
+    }
+}
+
+#stu4 {
+    &::before {
+        width: 75%;
+    }
+}
+
+#stu5 {
+    &::before {
+        width: 50%;
+    }
+}
+
+#stu6 {
+    &::before {
+        width: 10%;
+    }
+}
+
+#stu7 {
+    &::before {
+        width: 25%;
+    }
+}
+
+//Languages
+#sl1 {
+    &::before {
+        width: 0%;
+    }
+}
+
+#sl2 {
+    &::before {
+        width: 0%;
+    }
+}
+
+#sl3 {
+    &::before {
+        width: 50%;
+    }
+}
+
+#sl4 {
+    &::before {
+        width: 90%;
+    }
+}
+
+//Human knowledge
+#su1 {
+    &::before {
+        width: 10%;
+    }
+}
+
+#su2 {
+    &::before {
+        width: 20%;
+    }
+}
+
+#su3 {
+    &::before {
+        width: 5%;
+    }
+}
+
+#su4 {
+    &::before {
+        width: 5%;
+    }
+}

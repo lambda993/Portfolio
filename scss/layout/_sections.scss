@@ -1,0 +1,110 @@
+#personal-data {
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-grey;
+    margin: 0;
+
+    #my-picture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: $dark-blue;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        padding: 0;
+    }
+
+    @media screen and (min-width: $laptop) {
+        flex-direction: row;
+
+        #my-picture {
+            flex: 1;
+        }
+
+        ul {
+            flex: 1;
+        }
+    }
+}
+
+#my-skills {
+    background-color: $dark-grey;
+    margin: 0;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media screen and (min-width: $laptop) {
+        :first-child {
+            >div {
+                display: flex;
+                justify-content: space-between;
+                gap: 2em;
+
+                >div {
+                    flex: 1;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+#my-passions {
+    h3 {
+        @media screen and (min-width: $tablet) {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: $wide-screen) {
+    #first-page {
+        display: flex;
+        justify-content: center;
+        gap: 1%;
+
+        #personal-data {
+            flex: 1;
+            background-color: black;
+        }
+
+        #bio {
+            flex: 1;
+        }
+    }
+
+    #second-page {
+        display: flex;
+        justify-content: center;
+        gap: 1%;
+
+        #my-skills {
+            flex: 1;
+            background-color: black;
+        }
+
+        #my-passions {
+            flex: 1;
+        }
+    }
+}
