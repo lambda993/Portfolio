@@ -1,6 +1,22 @@
 .text-container {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    $margin: 2rem;
+
+    margin-right: $margin;
+    margin-left: $margin;
+
+    @media screen and (min-width: $tablet) {
+        $margin: 10%;
+
+        margin-right: $margin;
+        margin-left: $margin;
+    }
+
+    @media screen and (min-width: $laptop-l) {
+        $margin: 15%;
+
+        margin-right: $margin;
+        margin-left: $margin;
+    }
 }
 
 .text-container h1 {
